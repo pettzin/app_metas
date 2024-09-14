@@ -1,0 +1,8 @@
+- [x] Crias metas
+- [x] Listar metas
+    - [x] Metas realizadas
+    - [x] Metas não realizadas
+- [x] Marca/Desmarcar metas
+- [x] Remover metas
+- [x]Sistema de mensagem
+- [x]Sistema de salvar e carregar metas
