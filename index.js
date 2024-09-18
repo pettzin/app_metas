@@ -139,6 +139,28 @@ const deletarMetas = async () => {
     mensagem = "Metas deletadas com sucesso!"
 }
 
+const editarMetas = async () => {
+
+
+    const metaParaModificar = await select({
+        message: "Escolha a meta que deseja modificar:",
+        choices: metas.map((meta) => ({ name: meta.value, value: meta }))
+    });
+
+    const novoTexto = await input({ message: "Digite o novo texto para a meta:" });
+
+    if (novoTexto.length == 0) {
+        mensagem = "O novo texto da meta não pode ser vazio!";
+        return;
+    }
+
+    
+    const metaIndex = metas.findIndex((m) => m === metaParaModificar);
+    metas[metaIndex].value = novoTexto;
+
+    mensagem = "Meta modificada com sucesso!";
+}
+
 const mostrarMensagem = () => {
     console.clear()
 
@@ -180,6 +202,10 @@ const start = async () => {
                 value: "deletar",
             },
             {
+                name: "Editar meta",
+                value: "editar",
+            },
+            {
                 name: "Sair",
                 value: "sair",
             },
@@ -207,6 +233,10 @@ const start = async () => {
             
             case "deletar":
                 await deletarMetas()                
+                break;
+
+            case "editar":
+                await editarMetas()                
                 break;
             
             case "sair" : 

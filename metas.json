@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "value": "Caminha 10km todo dia",
+    "checked": true
+  },
+  {
+    "value": "caga 1x ao dia",
+    "checked": false
+  },
+  {
+    "value": "beber menos agua",
+    "checked": false
+  },
+  {
+    "value": "coquinha",
+    "checked": false
+  }
+]
